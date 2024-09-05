@@ -1,0 +1,152 @@
+:root {
+  --bg-color: #35343b;
+  --bg-input: rgb(37, 32, 32);
+  --text-color: #fff;
+  --deactive-color: #a00;
+  --active-color: #060;
+  --bg-btn: #407f81;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s linear;
+}
+
+body {
+  position: relative;
+  background: var(--bg-color);
+  font-family: "Oswald", sans-serif;
+  color: var(--text-color);
+  margin: 20px 0;
+}
+
+.tx-uppercase {
+  text-transform: uppercase;
+}
+
+.tx-center {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  background: var(--bg-input);
+  border: none;
+  outline: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: var(--text-color);
+  color-scheme: dark;
+}
+
+form,
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.salary-box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.salary-box .total {
+  display: flex;
+  align-items: center;
+}
+
+.salary-box .total span {
+  background: var(--deactive-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.salary-box .total span::before {
+  content: "Total: ";
+}
+
+input[type="submit"] {
+  background: var(--bg-btn);
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  background: var(--bg-btn);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: var(--text-color);
+  color-scheme: dark;
+  flex: 1;
+}
+
+/* table */
+.table {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  margin-top: 30px;
+}
+
+thead th {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-color);
+  background: #244041;
+  border: 1px solid #333;
+  padding: 5px 10px;
+}
+
+tbody td {
+  text-align: center;
+  color: var(--text-color);
+  background: #3c4849;
+  border: 1px solid #333;
+  padding: 5px 10px;
+}
+
+tbody td:nth-child(even) {
+  background: #2c3a3b;
+}
+
+tbody td:nth-last-child(1) {
+  display: flex;
+  gap: 10px;
+}
+
+.deleteAll {
+  margin-top: 10px;
+}
+
+.deleteAll button {
+  width: 100%;
+  background-color: var(--deactive-color);
+  color: inherit;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .salary-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+}
